@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow | Kanban Board</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div>
+        <h1>TaskFlow</h1>
+        <p>Organize your work, one task at a time.</p>
+      </div>
+      <span id="total-tasks">0 tasks</span>
+    </header>
+
+    <form id="task-form" class="task-form">
+      <input
+        id="task-title"
+        type="text"
+        placeholder="What needs to be done?"
+        required
+      >
+
+      <select id="task-priority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+
+      <button type="submit">+ Add Task</button>
+    </form>
+
+    <section class="board" id="board">
+      <div class="column" data-status="todo">
+        <div class="column-header">
+          <h2>To Do</h2>
+          <span id="todo-count">0</span>
+        </div>
+        <div class="task-list" id="todo-list"></div>
+      </div>
+
+      <div class="column" data-status="progress">
+        <div class="column-header">
+          <h2>In Progress</h2>
+          <span id="progress-count">0</span>
+        </div>
+        <div class="task-list" id="progress-list"></div>
+      </div>
+
+      <div class="column" data-status="done">
+        <div class="column-header">
+          <h2>Done</h2>
+          <span id="done-count">0</span>
+        </div>
+        <div class="task-list" id="done-list"></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
